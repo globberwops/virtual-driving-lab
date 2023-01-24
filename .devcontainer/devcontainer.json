@@ -1,0 +1,49 @@
+{
+	"name": "VirtualDrivingLab",
+	"build": {
+		"dockerfile": "Dockerfile",
+		"args": {
+			"VARIANT": "ubuntu-22.04"
+		}
+	},
+	"capAdd": [
+		"SYS_PTRACE"
+	],
+	"securityOpt": [
+		"seccomp=unconfined"
+	],
+	"extensions": [
+		"cheshirekow.cmake-format",
+		"llvm-vs-code-extensions.vscode-clangd",
+		"ms-azuretools.vscode-docker",
+		"ms-vscode.cmake-tools",
+		"ms-vscode.cpptools",
+		"ms-vscode.live-server",
+		"redhat.vscode-yaml"
+	],
+	"settings": {
+		"C_Cpp.clang_format_path": "/usr/bin/clang-format-16",
+		"C_Cpp.codeAnalysis.clangTidy.enabled": true,
+		"C_Cpp.codeAnalysis.clangTidy.path": "/usr/bin/clang-tidy-16",
+		"C_Cpp.default.compileCommands": "${workspaceFolder}/build/compile_commands.json",
+		"C_Cpp.default.configurationProvider": "ms-vscode.cmake-tools",
+		"cmake.exportCompileCommandsFile": true,
+		"cmake.generator": "Ninja Multi-Config",
+		"cmake.installPrefix": "${workspaceFolder}/build/prefix",
+		"editor.formatOnSave": true,
+		"editor.tabSize": 4,
+		"files.associations": {
+			".clang-format": "yaml",
+			".clang-tidy": "yaml",
+			".clangd": "yaml",
+			".cmake-format": "yaml"
+		},
+		"files.exclude": {
+			"**/.cache": true
+		},
+		"files.insertFinalNewline": true,
+		"files.trimFinalNewlines": true,
+		"files.trimTrailingWhitespace": true
+	},
+	"remoteUser": "vscode"
+}

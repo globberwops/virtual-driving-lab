@@ -1,0 +1,24 @@
+{
+  "name": "virtual-driving-lab",
+  "version-semver": "0.1.0",
+  "license": "BSL-1.0",
+  "dependencies": [
+    "benchmark",
+    "boost-asio",
+    "boost-dll",
+    "boost-interprocess",
+    "doctest",
+    "fmt",
+    "gtest",
+    "mp-units",
+    "protobuf",
+    "spdlog"
+  ],
+  "builtin-baseline": "6f7ffeb18f99796233b958aaaf14ec7bd4fb64b2",
+  "overrides": [
+    {
+      "name": "fmt",
+      "version": "8.1.1"
+    }
+  ]
+}
