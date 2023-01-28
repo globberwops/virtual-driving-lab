@@ -27,7 +27,7 @@ using Repository = EntityRepository<Position, Velocity, Acceleration>;
 
 TEST_SUITE("EntityRepositoryTest")
 {
-    TEST_CASE("reserve/capacity")
+    TEST_CASE("EntityRepository::reserve, EntityRepository::capacity")
     {
         auto repository{Repository{}};
         WARN_EQ(repository.capacity(), 0U);
@@ -36,7 +36,7 @@ TEST_SUITE("EntityRepositoryTest")
         REQUIRE_EQ(repository.capacity(), 1U);
     }
 
-    TEST_CASE("size/empty")
+    TEST_CASE("EntityRepository::size, EntityRepository::empty")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -47,7 +47,7 @@ TEST_SUITE("EntityRepositoryTest")
         REQUIRE_EQ(repository.size(), 1U);
     }
 
-    TEST_CASE("addEntity/hasEntity")
+    TEST_CASE("EntityRepository::addEntity, EntityRepository::hasEntity")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -57,7 +57,7 @@ TEST_SUITE("EntityRepositoryTest")
         REQUIRE_UNARY(repository.hasEntity(entity));
     }
 
-    TEST_CASE("removeEntity")
+    TEST_CASE("EntityRepository::removeEntity")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -69,7 +69,7 @@ TEST_SUITE("EntityRepositoryTest")
         REQUIRE_UNARY_FALSE(repository.hasEntity(entity));
     }
 
-    TEST_CASE("addComponent")
+    TEST_CASE("EntityRepository::addComponent")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -102,7 +102,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("getComponent")
+    TEST_CASE("EntityRepository::getComponent")
     {
         auto ostream{std::ostringstream{}};
 
@@ -155,7 +155,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("removeComponent")
+    TEST_CASE("EntityRepository::removeComponent")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -186,7 +186,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("removeEntity")
+    TEST_CASE("EntityRepository::removeEntity")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -217,7 +217,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("ostream operator") // revise
+    TEST_CASE("EntityRepository::operator<<") // revise
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -263,7 +263,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("view")
+    TEST_CASE("EntityRepository::view")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());
@@ -300,7 +300,7 @@ TEST_SUITE("EntityRepositoryTest")
         }
     }
 
-    TEST_CASE("container interface")
+    TEST_CASE("EntityRepository: container interface")
     {
         auto repository{Repository{}};
         WARN_UNARY(repository.empty());

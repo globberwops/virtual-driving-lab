@@ -5,7 +5,7 @@
 namespace vdlab
 {
 
-/// @brief <a href="https://en.cppreference.com/w/cpp/language/crtp">CRTP</a>  base class for errors
+/// @brief <a href="https://en.cppreference.com/w/cpp/language/crtp">CRTP</a> base class for errors
 /// @tparam T The derived error class
 template <typename T>
 struct Error

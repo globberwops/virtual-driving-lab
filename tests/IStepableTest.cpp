@@ -22,14 +22,11 @@ struct Derived : public IStepable<Derived>
     }
 };
 
-TEST_CASE("IStepable")
+TEST_CASE("IStepable::preStep, IStepable::step, IStepable::postStep")
 {
-    SUBCASE("getIdentifier/setIdentifier")
-    {
-        auto derived = Derived{};
+    auto derived = Derived{};
 
-        REQUIRE_UNARY(derived.preStep());
-        REQUIRE_UNARY(derived.step());
-        REQUIRE_UNARY(derived.postStep());
-    }
+    REQUIRE_UNARY(derived.preStep());
+    REQUIRE_UNARY(derived.step());
+    REQUIRE_UNARY(derived.postStep());
 }

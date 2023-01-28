@@ -3,7 +3,10 @@
 	"build": {
 		"dockerfile": "Dockerfile",
 		"args": {
-			"VARIANT": "ubuntu-22.04"
+			"VARIANT": "ubuntu-22.04",
+			"REINSTALL_CMAKE_VERSION": "3.25.2",
+			"REINSTALL_NINJA_VERSION": "1.11.1",
+			"REINSTALL_LLVM_VERSION": "16"
 		}
 	},
 	"capAdd": [
@@ -14,7 +17,6 @@
 	],
 	"extensions": [
 		"cheshirekow.cmake-format",
-		"llvm-vs-code-extensions.vscode-clangd",
 		"ms-azuretools.vscode-docker",
 		"ms-vscode.cmake-tools",
 		"ms-vscode.cpptools",
