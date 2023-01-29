@@ -39,12 +39,13 @@ jobs:
   build_docs:
     runs-on: ubuntu-latest
     steps:
-      - name: Install Doxygen
-        run: sudo apt-get install -y doxygen graphviz
+      - name: Install Doxygen and Ninja
+        run: sudo apt-get install -y doxygen graphviz ninja-build
       - uses: actions/checkout@v3
       - name: Configure CMake
         run: |
           cmake -B ${{github.workspace}}/build \
+            -GNinja \
             -DDOXYGEN_FULL_PATH_NAMES=NO
       - name: Build docs
         env:
